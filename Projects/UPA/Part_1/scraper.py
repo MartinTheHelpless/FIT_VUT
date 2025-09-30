@@ -33,5 +33,6 @@ def main():
         info = get_product_info(line)
         for i in info:
             print(i.strip(), end='\t')
+        print("")
 if __name__ == "__main__":
     main()
