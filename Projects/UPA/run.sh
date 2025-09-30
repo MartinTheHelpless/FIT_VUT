@@ -2,6 +2,8 @@
 
 source Part_1/bin/activate
 
-python3 Part_1/URL_Fetcher.py > url_test.txt
+cd Part_1/
 
-head -n 10 Part_1/url_test.txt | python3 Part_1/scraper.py
+python3 URL_Fetcher.py > url_test.txt
+
+head -n 10 url_test.txt | python3 scraper.py
