@@ -3,8 +3,8 @@ import urllib.request
 from bs4 import BeautifulSoup
 import re
 
-"""idk what is this"""
 def get_product_info(url):
+    """Function description"""
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                       "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -32,8 +32,6 @@ def main():
     for line in sys.stdin:
         info = get_product_info(line)
         for i in info:
-            print(i, end='\t')
+            print(i.strip(), end='\t')
 if __name__ == "__main__":
     main()
-    
-    
