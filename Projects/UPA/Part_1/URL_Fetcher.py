@@ -32,11 +32,8 @@ def main():
         final_url = base_url+f"?p={i+1}"
         all_products += go_to_site(final_url)
 
-    with open("urls.txt", "w", encoding="utf-8") as f:
-        for item in all_products:
-            f.write(item + "\n")
-
-
+    for product_link in all_products:
+        print(product_link)
 
 if __name__ == "__main__":
     main()
