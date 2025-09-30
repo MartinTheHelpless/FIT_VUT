@@ -22,8 +22,6 @@ def go_to_site(url):
     
     return products
 
-
-
 def main():
     base_url = "https://www.kindermaxx.de/en/toys/open-ended-play"
     page_count = 7 # how many to load (when i tested it 7 was maximum)
