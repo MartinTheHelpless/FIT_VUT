@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source Part_1/bin/activate
+source venv/bin/activate
 
 python3 fetcher.py > url_test.txt
 
