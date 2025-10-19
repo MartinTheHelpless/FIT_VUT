@@ -1,13 +1,14 @@
 # Projekt, 1. část: extrakce dat z webu
 
-**Název týmu:** Tým xkaska02\
+**Název týmu:** Tým xkaska02
+
 **Řešitelé:**
 - Martin Burian (xburiam00)
 - Karel Kaska (xkaska02)
 - David Kvaček (xkvace00)
 
 **Zvolený e-shop:**
-- Kindermaxx (https://www.kindermaxx.de/)
+- Otomoto (https://www.otomoto.pl/)
 
 **Obsahu archivu:**
 - `build.sh` – skript zajišťující překlad, instalaci závislostí a další úkony nezbytné pro běh programů,
@@ -20,15 +21,14 @@
 **Význam sloupců ve výstupu TSV:**
 1. URL produktu,
 2. název produktu,
-3. cena produktu (EUR),
-4. místo použití produktu,
-5. různé hračky navíc k produktu,
-6. oblast použití produktu,
-7. věková skupina použití produktu,
-8. oblast výuky produktu,
-9. oblast zájmu produktu.
+3. cena produktu (PLN),
+4. značka automobilu,
+5. model automobilu,
+6. barva automobilu (polsky),
+7. počet dveří,
+8. počet sedadel,
+9. rok výroby.
 
 **Poznámky k řešení:**
 
-Některé produkty ve výstupu TSV neobsahují všechny výše uvedené informace v rámci jednotlivých sloupců.
-V takovém případě jsou příslušné buňky prázdné a přítomné hodnoty se nachází ve sloupcích zarovnaných vlevo.
+V případě že daná stránka neobsahovala konkrétní atribut, je jeho hodnota ve výsledném TSV souboru uložena jako prázdný řetězec. 
