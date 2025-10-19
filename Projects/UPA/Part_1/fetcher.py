@@ -1,7 +1,7 @@
 import urllib.request
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
 import re
+from sys import stderr
 
 def go_to_site(url):
     headers = {
@@ -14,22 +14,23 @@ def go_to_site(url):
         with urllib.request.urlopen(req) as response:
             html = response.read().decode("utf-8", errors="ignore")
     except Exception as e:
-        print("Failed:", url, e)
+        print("Failed:", url, e, file=stderr)
         return []
 
     soup = BeautifulSoup(html, "html.parser")
-    products = [a["href"] for a in soup.find_all("a", attrs=re.compile("product--title"))]
+    products = [a["href"] for a in soup.find_all("a", href=re.compile("oferta"))]
     
-    return products
+    return set(products)
 
 def main():
-    base_url = "https://www.kindermaxx.de/en/toys/open-ended-play"
-    page_count = 7 # how many to load (when i tested it 7 was maximum)
+    base_url = "https://www.otomoto.pl/osobowe?search%5Border%5D=relevance_web"
+    page_count = 6
     all_products = []
     for i in range(page_count):
-        final_url = base_url+f"?p={i+1}"
+        final_url = base_url+f"&page={i+1}"
         all_products += go_to_site(final_url)
 
+    all_products = set(all_products)
     for product_link in all_products:
         print(product_link)
 
